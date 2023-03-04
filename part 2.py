@@ -22,25 +22,25 @@ if week_init == 2:
         if loop_init == 0:
             loop_init = int(input("Enter product number 1-5, or enter 0 to stop: "))
         while loop_init > 0:
-            while loop_init == 1:
+            if loop_init == 1:
                 sold_phones_profit += phones["Apple iPhone"] * int(input("Enter quantity sold: "))
                 loop_init = int(input("Enter product number 1-5, or enter 0 to stop: "))
-            while loop_init == 2:
+            elif loop_init == 2:
                 sold_phones_profit += phones["Android Phone"] * int(input("Enter quantity sold: "))
                 loop_init = int(input("Enter product number 1-5, or enter 0 to stop: "))
-            while loop_init == 3:
+            elif loop_init == 3:
                 sold_phones_profit += phones["Apple Tablet"] * int(input("Enter quantity sold: "))
                 loop_init = int(input("Enter product number 1-5, or enter 0 to stop: "))
-            while loop_init == 4:
+            elif loop_init == 4:
                 sold_phones_profit += phones["Android Tablet"] * int(input("Enter quantity sold: "))
                 loop_init = int(input("Enter product number 1-5, or enter 0 to stop: "))
-            while loop_init == 5:
+            elif loop_init == 5:
                 sold_phones_profit += phones["Windows Tablet"] * int(input("Enter quantity sold: "))
                 loop_init = int(input("Enter product number 1-5, or enter 0 to stop: "))
-            while loop_init > 5 :
+            elif loop_init > 5 :
                 print("Invalid input, please enter a valid number")
                 loop_init = int(input("Enter product number 1-5, or enter 0 to stop: "))
-            while loop_init == 0:
+            elif loop_init == 0:
                 break
             
             week_profit += sold_phones_profit
