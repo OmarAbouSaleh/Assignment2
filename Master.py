@@ -33,7 +33,7 @@ while days > 0:
     print("0 - Exit")
     print("\n")
     days = int(input(""))
-
+    
     if days == 1:
             day = input("Enter a specific day [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday]: ")
             print(f"For {day}")
