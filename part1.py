@@ -5,11 +5,12 @@ phones = {
     "Android Tablet" : 65.73,
     "Windows Tablet" : 51.49,
 }
+
 sold_phones_profit = 0
 week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-weekdays = []
 week_days_input = int(input("1 - For specific Day" + "\n" + "2 - For the Week" + "\n" + "3 - For Week Business Days" + "\n" + "4 - For Weekend days" + "\n" + "0 - Exit" + "\n"))
-product_number = 1
+week_profit = 0
+
 while week_days_input > 0:
     if week_days_input == 1:
         weekdays = 1
@@ -20,34 +21,61 @@ while week_days_input > 0:
     elif week_days_input == 4:
         weekdays = week[5:7]
     else:
-        break
-
+        week_days_input = int(input("1 - For specific Day" + "\n" + "2 - For the Week" + "\n" + "3 - For Week Business Days" + "\n" + "4 - For Weekend days" + "\n" + "0 - Exit" + "\n"))
     for days in weekdays:
         print(f"For {days}")
         product_number = int(input("Enter product number 1-5, or enter 0 to stop: "))
         while product_number > 0:
             if product_number == 1:
-                sold_phones_profit += phones["Apple iPhone"] * int(input("Enter quantity sold: "))
+                quantity_sold = int(input("Enter quantity sold: "))
+                sold_phones_profit += phones["Apple iPhone"] * quantity_sold
                 product_number = int(input("Enter product number 1-5, or enter 0 to stop: "))
             elif product_number == 2:
-                sold_phones_profit += phones["Android Phone"] * int(input("Enter quantity sold: "))
+                quantity_sold = int(input("Enter quantity sold: "))
+                sold_phones_profit += phones["Android Phone"] * quantity_sold
                 product_number = int(input("Enter product number 1-5, or enter 0 to stop: "))
             elif product_number == 3:
-                sold_phones_profit += phones["Apple Tablet"] * int(input("Enter quantity sold: "))
+                quantity_sold = int(input("Enter quantity sold: "))
+                sold_phones_profit += phones["Apple Tablet"] * quantity_sold
                 product_number = int(input("Enter product number 1-5, or enter 0 to stop: "))
             elif product_number == 4:
-                sold_phones_profit += phones["Android Tablet"] * int(input("Enter quantity sold: "))
+                quantity_sold = int(input("Enter quantity sold: "))
+                sold_phones_profit += phones["Android Tablet"] * quantity_sold
                 product_number = int(input("Enter product number 1-5, or enter 0 to stop: "))
             elif product_number == 5:
-                sold_phones_profit += phones["Windows Tablet"] * int(input("Enter quantity sold: "))
+                quantity_sold = int(input("Enter quantity sold: "))
+                sold_phones_profit += phones["Windows Tablet"] * quantity_sold
                 product_number = int(input("Enter product number 1-5, or enter 0 to stop: "))
             elif product_number > 5 :
                 print("Invalid input, please enter a valid number")
-            elif product_number == 0:
+                product_number = int(input("Enter product number 1-5, or enter 0 to stop: "))
+            elif  product_number == 0: 
                 break
-            else:
-                print("Invalid input, please enter a valid number")
-    
+            week_profit += sold_phones_profit
+    if week_days_input == 1:
+        print(f"Your total profit for today is: ${week_profit}")
+        if sold_phones_profit >= 10000:
+            print("You did well this period! Keep up the great work!")
+        else:
+            print("We didn't reach our goal for this period. More work is needed.")
+    elif week_days_input == 2:
+        print(f"Your total profit this week is: ${week_profit}")
+        if week_profit >= 10000:
+            print("You did well this period! Keep up the great work!")
+        else:
+            print("We didn't reach our goal for this period. More work is needed.")
+    elif week_days_input == 3:
+        print(f"Your total profit for today is: ${week_profit}")
+        if week_profit >= 10000:
+            print("You did well this period! Keep up the great work!")
+        else:
+            print("We didn't reach our goal for this period. More work is needed.")
+    elif week_days_input == 4:
+        print(f"Your total profit for today is: ${week_profit}")
+        if week_profit >= 10000:
+            print("You did well this period! Keep up the great work!")
+        else:
+            print("We didn't reach our goal for this period. More work is needed.")
+    week_days_input = int(input("1 - For specific Day" + "\n" + "2 - For the Week" + "\n" + "3 - For Week Business Days" + "\n" + "4 - For Weekend days" + "\n" + "0 - Exit" + "\n"))
+    week_profit = 0
 
-
-print(f"Your total profit for today is: ${sold_phones_profit}")
