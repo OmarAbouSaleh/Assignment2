@@ -1,0 +1,10 @@
+TestCase1
+
+Enter product number 1-5, or enter 0 to stop: 5
+Enter quantity sold: 3
+Enter product number 1-5, or enter 0 to stop: 1
+Enter quantity sold: 2
+Enter product number 1-5, or enter 0 to stop: 7
+Invalid input, please enter a valid number
+Enter product number 1-5, or enter 0 to stop: 0
+Your total profit for today is: $395.37
